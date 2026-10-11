@@ -1,0 +1,27 @@
+{
+  "name": "rver",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RVER project",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.5",
+    "dompurify": "^3.4.16",
+    "dotenv": "^18.0.5",
+    "fastify": "^5.12.5",
+    "grammy": "^1.46.0",
+    "groq-sdk": "^1.6.0",
+    "marked": "^18.1.0",
+    "redis": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
