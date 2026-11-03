@@ -2,25 +2,53 @@
   "name": "rver",
   "version": "1.0.0",
   "private": true,
-  "description": "RVER project",
+  "description": "A local personal AI assistant with persistent memory and reviewed code edits",
+  "license": "MIT",
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=24.18.0 <25"
+  },
+  "knip": {
+    "entry": [
+      "scripts/*.ts",
+      "tests/*.test.ts",
+      "public/app.js"
+    ],
+    "project": [
+      "src/**/*.ts",
+      "scripts/**/*.ts",
+      "tests/**/*.ts",
+      "public/**/*.js"
+    ],
+    "paths": {
+      "/vendor/marked.js": [
+        "node_modules/marked/lib/marked.esm.js"
+      ]
+    }
+  },
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "check": "tsc --noEmit",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "setup": "tsx scripts/setup.ts",
+    "doctor": "tsx scripts/doctor.ts",
+    "telegram": "tsx src/telegram.ts",
+    "migrate": "tsx scripts/migrate.ts"
   },
   "dependencies": {
-    "@fastify/static": "^10.1.5",
-    "dompurify": "^3.4.16",
-    "dotenv": "^18.0.5",
-    "fastify": "^5.12.5",
+    "dompurify": "^3.4.17",
+    "dotenv": "^18.0.9",
+    "fastify": "^5.12.7",
     "grammy": "^1.46.0",
     "groq-sdk": "^1.6.0",
-    "marked": "^18.1.0",
-    "redis": "^6.3.0"
+    "marked": "^18.1.2",
+    "redis": "^6.3.1"
   },
   "devDependencies": {
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.6",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }

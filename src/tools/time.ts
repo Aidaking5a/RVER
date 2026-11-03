@@ -1,3 +1,6 @@
 export function getTime() {
-    return new Date().toLocaleTimeString();
+  return {
+    date: new Date().toISOString(),
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  };
 }
