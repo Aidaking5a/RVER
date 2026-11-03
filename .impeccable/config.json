@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "createdAt": "2026-11-03T10:32:39.638Z",
+        "reason": "Codex: Arial is retained from the original RVER interface at a4c6820 public/index.html; the authorized upgrade preserves the existing visual design."
+      }
+    ]
+  }
+}
